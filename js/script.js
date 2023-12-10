@@ -1,12 +1,19 @@
 let isCelsius = true; // To track the current temperature unit
 
 document.addEventListener('DOMContentLoaded', function () {
+    const locationInput = document.getElementById('location-input');
     const searchButton = document.getElementById('search-button');
     const unitToggleButton = document.getElementById('unit-toggle');
 
     searchButton.addEventListener('click', function () {
         const location = document.getElementById('location-input').value;
         fetchWeatherData(location);
+    });
+
+    locationInput.addEventListener('keyup', function(event) {
+        if (event.key === 'Enter') {
+            fetchWeatherData(locationInput.value);
+        }
     });
 
     unitToggleButton.addEventListener('click', function () {
