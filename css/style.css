@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+#controls, #weather {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input[type="text"], button {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 4px;
+}
+
+input[type="text"] {
+    border: 1px solid #ddd;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#controls {
+    max-width: 451px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+    #controls, #weather {
+        display: block;
+        width: 100%;
+    }
+}
