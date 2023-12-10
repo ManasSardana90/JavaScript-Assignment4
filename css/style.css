@@ -1,4 +1,8 @@
 body {
+    background-image: url('../assets/DALL·E 2023-12-10 18.11.47 - Background Image.png');
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
     font-family: Arial, sans-serif;
     text-align: center;
     background-color: #f0f0f0;
@@ -7,7 +11,7 @@ body {
 }
 
 #controls, #weather {
-    background-color: #fff;
+    background-color: transparent;
     padding: 20px;
     border-radius: 8px;
     margin-top: 20px;
@@ -43,7 +47,19 @@ button:hover {
     align-items: center;
 }
 
+#weather {
+    display: inline-block;
+    border: 2px solid white;
+}
+
+#weather p {
+    text-shadow: 0px 3px 4px #fff; /* White text shadow for better visibility */
+}
+
 @media only screen and (max-width: 600px) {
+    body {
+        background-size: auto 100%;
+    }
     #controls, #weather {
         display: block;
         width: 100%;
