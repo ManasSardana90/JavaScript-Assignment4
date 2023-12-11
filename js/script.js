@@ -5,17 +5,20 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchButton = document.getElementById('search-button');
     const unitToggleButton = document.getElementById('unit-toggle');
 
+    // Fetch weather data when 'Get Weather' button is clicked
     searchButton.addEventListener('click', function () {
         const location = document.getElementById('location-input').value;
         fetchWeatherData(location);
     });
 
+    // Enable fetching weather data on pressing 'Enter'
     locationInput.addEventListener('keyup', function(event) {
         if (event.key === 'Enter') {
             fetchWeatherData(locationInput.value);
         }
     });
 
+    // Toggle temperature unit between Celsius and Fahrenheit
     unitToggleButton.addEventListener('click', function () {
         isCelsius = !isCelsius;
         unitToggleButton.textContent = isCelsius ? "Switch to Fahrenheit" : "Switch to Celsius";
@@ -29,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
     fetchWeatherData('Barrie');
 });
 
+// Fetches weather data from OpenWeatherMap API
 function fetchWeatherData(location) {
     const apiKey = '21e088e470fa39c061ffe9653eb15e7b';
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}`;
@@ -45,6 +49,7 @@ function fetchWeatherData(location) {
         });
 }
 
+// Display the fetched weather data
 function displayWeatherData(data) {
     document.getElementById('student-info').textContent = 'Manas Sardana - 200542367';
     document.getElementById('location').textContent = `Location: ${data.name}`;
